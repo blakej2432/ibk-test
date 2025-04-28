@@ -1,0 +1,145 @@
+body{
+    background: black;
+}
+/* header */
+header{
+    padding: 0 2.5vw;
+}
+.header-wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.header-wrap>div{
+    display: flex;
+    align-items: center;
+    gap:40px;
+}
+.header-wrap>div ul{
+    display: flex;
+    gap:50px;
+}
+.header-wrap>div ul>li>a{
+    color: white;
+    text-transform:uppercase;
+}
+.header-wrap>.header-wrap-right .ham-btn>a{
+    display: block;
+    width:80px;
+    height: 80px;
+    background: rgb(255, 252, 46) url(../images/iconmonstr-menu-square-filled.svg) no-repeat center center;
+    background-size: 40px;
+    /* 글자 안보이게 indent 마구 넣어버리기 */
+    text-indent: -9999px;
+}
+/* main */
+.login-wrap{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+.login-member{
+    /* 전체 100%에서 왼쪽오른쪽 400px 빠진 만큼의 크기 */
+    width:910px;
+    background: pink;
+    margin: 0 auto;
+    font-size: 0.88em;
+}
+.login-member-wrap{
+    display: flex;
+}
+.login-member-wrap>div{
+    flex:1;
+    padding: 50px;
+}
+.login-member-wrap>.login{
+    background: #d6d6d6;
+}
+.login-member-wrap>.member{
+    background: #ffd800;
+}
+.login-member-wrap>div p{
+    margin: 20px 0 10px;
+}
+.login-member-wrap>div button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size:1.3rem;
+    text-transform:uppercase;
+    background: black;
+    color: white;
+}
+
+/* .login-member-wrap>.login form>p{
+
+}
+.login-member-wrap>.login form>p label{
+
+}
+.login-member-wrap>.login form>p input{
+
+} */
+/* 부모 선택자 반복되니까 줄이기 */
+
+.login-member-wrap{
+    >.login{
+        form{
+            >p{
+                position:relative; /* label의 top left 기준점을 설정해준다 */
+                label{
+                    position:absolute;
+                    top:50%;
+                    left:10px;
+                    transform:translateY(-50%); /* 부모요소의 딱 중간에 위치하게 만들기 */
+                }
+
+                input{
+                    width: 100%;
+                    line-height: 40px;
+                    border: none; /* 클릭하면 border 나옴. outline을 없애면 눌러도 안나옴 */
+                }
+            }
+            .login-check{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+/* footer */
+footer{
+    color:#888;
+    background: #151515;
+    >div{
+        >div{
+            position: relative;
+            max-width: 1200px;
+            margin:0 auto;
+            background-color: rgb(126, 10, 10);
+        
+            .topBtn{
+                position: absolute;
+                right:0;
+                top:0;
+                transform: translateY(-50%);
+
+            }
+        }
+        
+        .footer-menu{
+            display: flex;
+            gap: 50px;
+            /* justify-content: center; */
+            li {
+                display: flex;
+                  
+                a {
+                    color: #888;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
